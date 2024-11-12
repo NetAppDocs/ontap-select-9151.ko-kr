@@ -1,0 +1,125 @@
+---
+sidebar: sidebar 
+permalink: concept_stor_eff_support.html 
+keywords: ontap select, storage efficiency support 
+summary: ONTAP Select는 FAS 및 AFF 어레이에 제공되는 스토리지 효율성 옵션과 유사한 스토리지 효율성 옵션을 제공합니다. 
+---
+= 스토리지 효율성 지원
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Select는 FAS 및 AFF 어레이에 제공되는 스토리지 효율성 옵션과 유사한 스토리지 효율성 옵션을 제공합니다.
+
+All-Flash VSAN 또는 일반 플래시 스토리지를 사용하는 vNAS(ONTAP Select Virtual NAS) 구축은 비 SSD DAS(직접 연결 스토리지)가 포함된 ONTAP Select에 대한 Best Practice를 따라야 합니다.
+
+SSD 드라이브와 프리미엄 라이센스가 포함된 DAS 스토리지가 있는 경우, AFF와 같은 퍼스낼리티가 새로운 설치에서 자동으로 활성화됩니다.
+
+AFF와 같은 퍼스낼리티를 사용하면 설치 중에 다음 인라인 SE 기능이 자동으로 활성화됩니다.
+
+* 인라인 제로 패턴 감지
+* 볼륨 인라인 중복제거
+* 볼륨 백그라운드 중복제거
+* 적응형 인라인 압축
+* 인라인 데이터 컴팩션
+* 애그리게이트 인라인 중복제거
+* 집계 백그라운드 중복 제거
+
+
+ONTAP Select이 기본 스토리지 효율성 정책을 모두 사용하도록 설정했는지 확인하려면 새로 생성한 볼륨에서 다음 명령을 실행합니다.
+
+[listing]
+----
+<system name>::> set diag
+Warning: These diagnostic commands are for use by NetApp personnel only.
+Do you want to continue? {y|n}: y
+twonode95IP15::*> sis config
+Vserver:                                SVM1
+Volume:                                 _export1_NFS_volume
+Schedule                                -
+Policy:                                 auto
+Compression:                            true
+Inline Compression:                     true
+Compression Type:                       adaptive
+Application IO Si                       8K
+Compression Algorithm:                  lzopro
+Inline Dedupe:                          true
+Data Compaction:                        true
+Cross Volume Inline Deduplication:      true
+Cross Volume Background Deduplication:  true
+----
+
+NOTE: 9.6 이상에서 ONTAP Select를 업그레이드하려면 프리미엄 라이센스가 있는 DAS SSD 스토리지에 ONTAP Select를 설치해야 합니다. 또한 ONTAP 배포를 통해 초기 클러스터 설치 중에 * 스토리지 효율성 * 사용 확인란을 선택해야 합니다. 이전 조건이 충족되지 않은 경우 AFF와 같은 퍼스낼리티 사후 ONTAP 업그레이드를 활성화하려면 부팅 인수를 수동으로 생성하고 노드를 재부팅해야 합니다. 자세한 내용은 기술 지원 부서에 문의하십시오.
+
+.ONTAP Select 스토리지 효율성 구성
+다음 표에는 미디어 유형 및 소프트웨어 라이센스에 따라 사용 가능한 다양한 스토리지 효율성 옵션이 기본적으로 표시되거나 사용하지 않도록 설정되지만 기본적으로 권장되지는 않습니다.
+
+[cols="4"]
+|===
+| ONTAP Select 기능 | DAS SSD(프리미엄 또는 프리미엄 XL^1^) | DAS HDD(모든 라이센스) | vNAS(모든 라이센스) 
+
+
+| 인라인 제로 감지 | 예(기본값) | 예. 볼륨별로 사용자가 사용하도록 설정합니다 | 예. 볼륨별로 사용자가 사용하도록 설정합니다 
+
+
+| 볼륨 인라인 중복제거 | 예(기본값) | 사용할 수 없습니다 | 지원되지 않습니다 
+
+
+| 32K 인라인 압축(보조 압축) | 예 볼륨 단위로 사용자가 사용합니다. | 예. 볼륨별로 사용자가 사용하도록 설정합니다 | 지원되지 않습니다 
+
+
+| 8K 인라인 압축(적응형 압축) | 예(기본값) | 예 볼륨 단위로 사용자가 사용합니다 | 지원되지 않습니다 
+
+
+| 백그라운드 압축 | 지원되지 않습니다 | 예 볼륨 단위로 사용자가 사용합니다 | 예. 볼륨별로 사용자가 사용하도록 설정합니다 
+
+
+| 압축 스캐너 | 예 | 예 | 예. 볼륨별로 사용자가 사용하도록 설정합니다 
+
+
+| 인라인 데이터 컴팩션 | 예(기본값) | 예 볼륨 단위로 사용자가 사용합니다 | 지원되지 않습니다 
+
+
+| 다짐 스캐너 | 예 | 예 | 지원되지 않습니다 
+
+
+| 애그리게이트 인라인 중복제거 | 예(기본값) | 해당 없음 | 지원되지 않습니다 
+
+
+| 볼륨 백그라운드 중복제거 | 예(기본값) | 예 볼륨 단위로 사용자가 사용합니다 | 예. 볼륨별로 사용자가 사용하도록 설정합니다 
+
+
+| 집계 백그라운드 중복 제거 | 예(기본값) | 해당 없음 | 지원되지 않습니다 
+|===
+[소규모]#^1^ONTAP Select 9.6은 새로운 라이센스(프리미엄 XL)와 새로운 VM 크기(대형)를 지원합니다. 그러나 대규모 VM은 소프트웨어 RAID를 사용하는 DAS 구성에서만 지원됩니다. 9.6 릴리즈의 대형 ONTAP Select VM에서는 하드웨어 RAID 및 vNAS 구성이 지원되지 않습니다.#
+
+.DAS SSD 구성의 업그레이드 동작에 대한 참고 사항
+ONTAP Select 9.6 이상으로 업그레이드한 후 명령이 업그레이드가 완료되었음을 나타낼 때까지 `system node upgrade-revert show` 기다린 후 기존 볼륨의 스토리지 효율성 값을 확인하십시오.
+
+ONTAP Select 9.6 이상으로 업그레이드한 시스템에서 기존 aggregate 또는 새로 생성된 애그리게이트에 생성된 새로운 볼륨이 새로운 구축 환경에서 생성된 볼륨과 동일한 동작이 발생합니다. ONTAP Select 코드 업그레이드를 거친 기존 볼륨은 몇 가지 변동을 통해 새로 생성된 볼륨과 동일한 스토리지 효율성 정책을 대부분 가집니다.
+
+시나리오 1:: 업그레이드 전에 볼륨에 스토리지 효율성 정책이 활성화되어 있지 않은 경우:
++
+--
+* 가 포함된 볼륨에는 `space guarantee = volume` 인라인 데이터 컴팩션, 애그리게이트 인라인 중복제거, 애그리게이트 백그라운드 중복제거가 활성화되어 있지 않습니다. 이러한 옵션은 업그레이드 후 활성화할 수 있습니다.
+* 이 포함된 볼륨에는 `space guarantee = none` 백그라운드 압축이 활성화되어 있지 않습니다. 이 옵션은 업그레이드 후 활성화할 수 있습니다.
+* 업그레이드 후 기존 볼륨의 스토리지 효율성 정책이 자동으로 설정됩니다.
+
+
+--
+시나리오 2:: 업그레이드 전에 볼륨에서 일부 스토리지 효율성 기능이 이미 활성화되어 있는 경우:
++
+--
+* 를 사용하는 볼륨은 `space guarantee = volume` 업그레이드 후 차이가 없습니다.
+* 애그리게이트 백그라운드 중복제거가 활성화되어 있는 볼륨입니다. `space guarantee = none`
+* 이 있는 볼륨의 `storage policy inline-only` 정책은 자동으로 설정됩니다.
+* 사용자 정의 스토리지 효율성 정책이 있는 볼륨에서는 볼륨 을 제외하고 정책에 변화가 없습니다. `space guarantee = none` 이러한 볼륨에는 애그리게이트 백그라운드 중복제거가 활성화되어 있습니다.
+
+
+--
+

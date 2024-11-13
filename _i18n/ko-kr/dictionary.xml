@@ -965,7 +965,6 @@
   <block id="614a7784cfcb44e896f7945455f42f95" category="paragraph">ONTAP Select에서는 여러 ONTAP 기능이 지원되지 않습니다. 대부분의 경우 이러한 기능에는 가상화된 ONTAP Select 환경에서 사용할 수 없는 특수 하드웨어가 필요합니다.</block>
   <block id="7259cd6e0f46eebf9079f25f465a8c63" category="list-text">자율 랜섬웨어 보호(ARP)</block>
   <block id="a847af8ec24fb4acb1f1194041f1508f" category="list-text">클러스터 IPspace 포트, 가상 LAN(VLAN) 또는 링크 통합 그룹을 추가 또는 제거하는 것을 포함하여 클러스터 IPspace에 대한 모든 수정 작업은 지원되지 않습니다.</block>
-  <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
   <block id="e400270296a47b2c68bd6e799fac399d" category="list-text">Fibre Channel Fibre Channel 및 Fibre Channel over Ethernet은 지원되지 않습니다.</block>
   <block id="4980ffa00c517c7cc63e35e9bb2badc8" category="list-text">상태 모니터링 하드웨어 기반 ONTAP 구축과 함께 사용되는 기존 상태 모니터링은 기본 하드웨어 구성 요소에 따라 다릅니다. ONTAP Select와 함께 사용되는 가상화된 환경으로 인해 상태 모니터가 활성 상태가 아닙니다.</block>
   <block id="f7ee707e6ddfc29288dbbbdf8cecd146" category="list-text">인터페이스 그룹 인터페이스 그룹은 지원되지 않습니다.</block>
@@ -2080,7 +2079,6 @@
   <block id="f371e1e74365e433f105f30c886225bf" category="inline-link-macro">ONTAP Select 9.14.1 릴리스 정보</block>
   <block id="2dbcb54e47dfd070743afb26077cdc91" category="list-text">9.14.1P2보다 낮은 버전의 ONTAP Select Deploy 9.14.1을 실행 중인 경우 가능한 한 빨리 ONTAP Select Deploy 9.14.1P2로 업그레이드해야 합니다. 자세한 내용은 를 <block ref="6635db952aa4480bb5bc591b4d6d32f6" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="aacb1ad8ec74092a13074108a4e20c02" category="list-text">VMware ESXi 지원이 향상되었습니다</block>
-  <block id="78fb396e8c541b492002e6b94963fe83" category="list-text">ONTAP Select 9.14.1에는 VMware ESXi 8.0.2에 대한 지원이 포함되어 있습니다.</block>
   <block id="1e2be71e8b4858c0b3e832cba35731d1" category="section-title">ONTAP Select 9.13.1 을 참조하십시오</block>
   <block id="cdbcb12eafeb6cc1f6a058e9c52a7f8d" category="paragraph">ONTAP Select 9.13.1에는 몇 가지 새로운 기능과 향상된 기능이 포함되어 있습니다.</block>
   <block id="58c277c116ff23ffb9879debb95b4968" category="list-text">NVMe over TCP 지원</block>
@@ -3418,10 +3416,6 @@
   <block id="412c286ae37ff7a40b56dd84c3bf196c" category="section-title">하드웨어 및 스토리지 요구 사항</block>
   <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">클러스터 확장 및 수축 기능은 다음과 같은 방식으로 제한됩니다.</block>
   <block id="03a645906298706d76817495f4d8708a" category="list-text">지원은 ESX 하이퍼바이저 호스트에서 생성된 클러스터로 제한됩니다. 다음 ESX 버전은 ONTAP Select 9.15.1과 호환됩니다.</block>
-  <block id="ec65581eeb2dfa95316cf6a00d2ff593" category="list-text">ESXi 8.0U2</block>
-  <block id="43629b681eab8f23e6624067ec8d1fde" category="list-text">ESXi 8.0U1</block>
-  <block id="200d1894c9fd6ae53ee1224b58c879d1" category="list-text">ESXi 8.0GA</block>
-  <block id="83796d186e6e678e53d65b677d9068ca" category="list-text">ESXi 7.0U3</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
   <block id="2b2045e987020e440e1d72497530fdf6" category="list-text">6노드 클러스터에서 8노드 클러스터로만 확장할 수 있습니다.</block>
   <block id="39503511d67e0af8ddd6049c24f164f7" category="list-text">수축은 8노드 클러스터에서 6노드 클러스터로만 가능합니다.</block>
@@ -3724,4 +3718,11 @@
   <block id="1c5ffa58ac07641f5cec5616c07b2ba2" category="sidebar">ONTAP Select 이미지를 추가합니다</block>
   <block id="0a15f7ba73868a32304fdf52855463c9" category="sidebar">ONTAP Select 이미지를 제거합니다</block>
   <block id="afc9d68a1be701598b5ef94dc0be2844" category="sidebar">2노드 클러스터에 대한 구축 복구</block>
+  <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1에는 VMware ESXi 8.0 U2에 대한 지원이 포함되어 있습니다.</block>
+  <block id="5add73dc063e8420f47ce30e8a544f34" category="list-text">VMware ESXi 8.0 U3(ONTAP 9.15.1P4 이상 사용 가능한 패치 릴리즈에 사용 가능)</block>
+  <block id="03c073298ba0e42c4beebe1f4a065d90" category="list-text">ESXi 8.0 U3(ONTAP 9.15.1P4 이상 사용 가능한 패치 릴리즈에 사용 가능)</block>
+  <block id="3a13e6fcb6840db51e3e181c41dff37b" category="list-text">ESXi 8.0 U2</block>
+  <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1</block>
+  <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
+  <block id="8d224631a5a87c64caecc71fee6fb612" category="list-text">ESXi 7.0 U3</block>
 </blocks>

@@ -22,6 +22,9 @@ ONTAP Select 배포 관리 유틸리티를 설치하고 유틸리티를 사용�
 
 NetApp Support 사이트에서 ONTAP Select 패키지를 다운로드할 수 있습니다.
 
+.시작하기 전에
+https://mysupport.netapp.com/site/user/registration["등록된 NetApp 지원 사이트 계정이 있습니다"^]..
+
 .이 작업에 대해
 ONTAP Select Deploy 관리 유틸리티는 OVF(Open Virtualization Format) 표준을 기반으로 하는 VM(가상 머신)으로 패키징됩니다. 단일 압축 파일에는 접미사가 `ova`있습니다. VM은 ONTAP Select 노드의 배포 서버 및 설치 이미지를 제공합니다.
 

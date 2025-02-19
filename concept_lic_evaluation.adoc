@@ -16,6 +16,15 @@ summary: 구매를 결정하기 전에 ONTAP Select를 평가하려는 경우 �
 [role="lead"]
 구매를 결정하기 전에 ONTAP Select를 평가하려는 경우 평가판 라이센스를 사용할 수 있습니다. 평가판 라이센스는 ONTAP Select 배포 관리 유틸리티에 포함되어 있으며 평가 배포의 일부로 각 ONTAP Select 노드에 자동으로 적용됩니다.
 
+[NOTE]
+====
+ONTAP Select 배포 관리 유틸리티를 다운로드하려면 다음이 필요합니다.
+
+* 등록된 NetApp 지원 사이트 계정 계정이 없는 경우 을 참조하십시오 https://mysupport.netapp.com/site/user/registration["사용자 등록"^].
+*  https://mysupport.netapp.com/site/downloads/evaluation/ontap-select["최종 사용자 사용권 계약에 동의합니다"^]평가판 라이센스가 있는 ONTAP Select 배포를 위해.
+
+
+====
 
 
 == 라이센스 특성

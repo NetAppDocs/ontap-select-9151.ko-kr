@@ -297,43 +297,10 @@
   <block id="04de579c1894992d6db449edfae40cea" category="list-text">2.7.2 이전 버전 배포</block>
   <block id="90d8a60c5d8da54341e7fbd934d3024e" category="list-text">ONTAP Select 배포 2.7.2 및 이전 모든 릴리즈에는 REST API 버전 2가 포함되어 있습니다.</block>
   <block id="1e65c8b003833561b006ff8f81c74d0a" category="admonition">REST API 버전 2와 3은 호환되지 않습니다. API 버전 2가 포함된 이전 릴리즈에서 2.8 이상을 배포하도록 업그레이드하는 경우 명령줄 인터페이스를 사용하여 API에 직접 액세스하는 기존 코드와 스크립트를 모두 업데이트해야 합니다.</block>
-  <block id="c32e557727d87dabd26419e2d74fd541" category="summary">Ansible 역할을 사용하여 ONTAP Select 구축을 자동화합니다.</block>
-  <block id="6a7bceb6d2b5ceedce475be4f9b01f70" category="doc">Ansible을 사용하여 ONTAP Select 구축 자동화</block>
-  <block id="ef4813ca7c0fc0ff31c081f95744fca3" category="paragraph">Ansible 역할 및 플레이북을 사용하여 ONTAP Select 구축 자동화</block>
-  <block id="53e3f47e6ca445e9be6f8424cc405d08" category="paragraph">Ansible 역할은 표준화된 파일 구조에 있는 작업, 템플릿, 처리기 및 변수의 논리적 모음입니다. 이러한 역할을 사용하여 독립적으로 사용할 수 있는 기능을 사용하고, 재사용하고, 모듈화합니다. 실행을 위해 플레이북에 역할 및 실행하려는 호스트 목록을 포함합니다. Ansible을 설치하고, 필요한 모듈을 업데이트하고, 플레이북을 이해한 후에는 NetApp GitHub에서 ONTAP Select(OTS) 역할을 다운로드하여 ONTAP Select 클러스터 배포를 위한 자체 플레이북을 만들고 실행할 수 있습니다.</block>
-  <block id="a5cd3ed116608dac017f14c046ea56bf" category="section-title">역할</block>
-  <block id="826d466edf75a6e091340a11b737b650" category="paragraph">ONTAP Select에는 두 가지 역할을 사용할 수 있습니다.</block>
-  <block id="efd9faa12026d5475636db4e69b74c88" category="section-title">NA_OTS_배포</block>
-  <block id="43240aa487d9e87740e23d626da1a362" category="paragraph">이 역할은 ONTAP Select 구축을 위한 설치 파일을 vCenter 또는 ESXi 호스트에 다운로드합니다. 그런 다음 배포 VM을 생성하고 실행합니다.</block>
-  <block id="295abdb722ec58f88548a860f1de3615" category="paragraph">이 역할은 다음과 같은 입력 값을 사용합니다.</block>
-  <block id="ce32e2e59fbccdfecf9783e364821344" category="list-text">vCenter 또는 ESXi 호스트 자격 증명</block>
-  <block id="bcac6351d7ffa20621625e884ac48eef" category="list-text">다음과 같은 정보를 포함하여 VM 생성 배포:</block>
-  <block id="75ba8d70e3692ba200f0e0df37b4d2ae" category="list-text">IP 주소입니다</block>
   <block id="dae4a538d4ca7b6c0789932062fe718d" category="list-text">호스트 이름입니다</block>
-  <block id="99dea78007133396a7b8ed70578ac6ae" category="list-text">로그인</block>
   <block id="dc647eb65e6711e155375218212b3964" category="list-text">암호</block>
   <block id="8a5227cc82d14862956938caffc1acf2" category="list-text">데이터 저장소</block>
   <block id="eec89088ee408b80387155272b113256" category="list-text">네트워크</block>
-  <block id="53c3b66ec700ff4dc91986d0dd8b16ac" category="list-text">OVA 파일의 로컬 경로입니다</block>
-  <block id="a494e509586e66c9858cd2b0032bbb59" category="paragraph">역할을 포함하여 플레이북을 실행하기 전에 설치 파일을 사용할 수 있는지 확인하십시오.)</block>
-  <block id="67b626a26e85af31687eb59b04a92d36" category="admonition">이러한 입력 값을 제공하는 가장 간단한 방법은 YML 형식의 전역 변수 파일을 사용하는 것입니다. 이 YML 파일을 플레이북에 전달합니다.</block>
-  <block id="62f436a0c8a1102605e3a87bed8fb9bb" category="paragraph">이 역할에는 배포 OVA 파일을 호스트로 가져와서 VM을 생성하고 실행하는 단일 작업이 있습니다. NetApp Ansible GitHub에서 이 역할을 액세스하여 다운로드할 수 있습니다. <block ref="76046f5222ce385c10b6d73a03e82ba7" category="inline-link-macro-rx"></block></block>
-  <block id="844c277ee2d3a4ab83ef1f113352e100" category="section-title">NA_OTS_클러스터</block>
-  <block id="7fd297e1f0beaa7151bd9285d7dff546" category="paragraph">이 역할은 ONTAP Select 배포 API를 사용하여 ONTAP Select 클러스터를 생성하고 배포합니다. 배포 VM이 생성되었으며 수동으로 또는 * na_OTS_deploy * 역할을 사용하여 실행 중인 것으로 가정합니다. 또한 이 역할에서는 Select 호스트가 ONTAP Select 클러스터에 필요한 네트워킹 및 스토리지로 적절히 구성되어 있다고 가정합니다.</block>
-  <block id="f0257515d53312c2d8028409069c5d84" category="paragraph">이 역할은 vCenter 또는 ESXi 자격 증명에 대한 입력 값을 사용하고, VM 자격 증명을 구축하여 API와 ONTAP Select 클러스터 및 노드 VM을 생성하는 데 필요한 모든 관련 정보를 액세스합니다.</block>
-  <block id="ea6e2b68eae559d20093f0d7eae85fb8" category="paragraph">역할은 다음 작업을 수행합니다.</block>
-  <block id="de939cf4d4a045633c8a520b501bb40e" category="list-text">호스트 자격 증명 추가(vCenter 또는 ESXi</block>
-  <block id="0b67a16a8394599f4eecf8683ef0d301" category="list-text">호스트 ID 가져오기 및 등록</block>
-  <block id="fa8c1aa26c03157b5e62997fd0fdaa14" category="list-text">내부 네트워크 검증(다중 노드 클러스터의 경우)</block>
-  <block id="d7494ab1ca8800562b8faee8d3a4984e" category="list-text">클러스터 생성</block>
-  <block id="073dd452840b7a9881432728f959cd2c" category="list-text">노드 구성</block>
-  <block id="5b6e8147fdc6caa0b27d7fc75489608f" category="list-text">네트워크 및 스토리지 풀 구성</block>
-  <block id="b6877b94a1e530ab0fc6b8d1545fd166" category="list-text">클러스터 구축</block>
-  <block id="f8cac4cf1b1201d6a9386323183ca9c8" category="paragraph">결과적으로 클러스터 VM이 가동되고 ONTAP Select 클러스터가 완전히 배포되면 역할이 완료됩니다. NetApp Ansible GitHub에서 이 역할을 액세스하여 다운로드할 수 있습니다. <block ref="56a4d28e5b01605b6b865a56dead08da" category="inline-link-macro-rx"></block></block>
-  <block id="043194e296799e8dbefda7f37d0e101e" category="section-title">플레이북 예</block>
-  <block id="483b9ffc2547d862835719e69821ce3e" category="paragraph">다음은 이러한 두 가지 ONTAP Select 역할을 수행하는 플레이북 예입니다. 입력 변수는 YML 파일에서 정의되며 "VAR_FILES"를 통해 전달됩니다. 각 역할의 README 파일에서 자세한 내용을 확인할 수 있습니다.</block>
-  <block id="6c92285fa6d3e827b198d120ea3ac674" category="inline-link-macro">여기</block>
-  <block id="006a0a02171a296bf3a320f8991be24a" category="paragraph">위 역할을 사용하여 ONTAP Select 클러스터를 생성하고 실행한 후, ONTAP 기능을 더욱 자동화하는 데 사용할 수 있는 다양한 ONTAP Ansible 역할을 활용할 수 있습니다. 사용 가능한 ONTAP 역할에 액세스할 <block ref="4d400bdda09fce7a6e9e1a49c64cce9d" category="inline-link-macro-rx"></block>수 있습니다. 요약하면, ONTAP Select Ansible 역할과 ONTAP 역할을 함께 사용하면 엔드-투-엔드 워크플로우를 완벽하게 자동화하여 ONTAP Select을 통해 스토리지를 관리할 수 있습니다.</block>
   <block id="e94fcecbba43e9dc52109bded1878e47" category="summary">환경에 가장 적합한 HA 구성을 선택할 수 있는 고가용성 옵션에 대해 알아보십시오.</block>
   <block id="a2aed8c01fc695836bd76d6f5b7a2ad9" category="doc">고가용성 구성</block>
   <block id="80ca7f43f3e672c21243bfefe6098be3" category="paragraph">고객이 엔터프라이즈급 스토리지 어플라이언스에서 일반 하드웨어에서 실행되는 소프트웨어 기반 솔루션으로 애플리케이션 워크로드를 이동하기 시작했지만 복원력과 내결함성 관련된 기대치와 요구사항은 달라지지 않았습니다. 제로 복구 시점 목표(RPO)를 제공하는 HA 솔루션은 인프라 스택의 어떤 구성 요소로부터의 장애로 인한 데이터 손실로부터 고객을 보호합니다.</block>
@@ -2008,20 +1975,15 @@
   <block id="2bfa0c145c4d2b4004e481451529eb85" category="doc">구축 후 클러스터의 초기 상태입니다</block>
   <block id="4f8adfce07663fda787740d49cd25397" category="paragraph">ONTAP Select 클러스터는 생성 후 몇 가지 특성을 갖습니다.</block>
   <block id="6c8b8cb454d3ccba7c258b15c1a29605" category="inline-link-macro">OTS 배치 클러스터 새로 고침이 오류와 함께 실패합니다</block>
-  <block id="07c811008e90cffbb0d342cd1beb72b8" category="admonition">ONTAP 관리자 계정에 대한 역할 및 권한을 제한하면 ONTAP Select 배포에서 클러스터를 관리하는 기능이 제한될 수 있습니다. 자세한 내용은 KB 문서를 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>참조하십시오.</block>
   <block id="bfa10f7c5e846fdab9228aa316c04549" category="paragraph-title">LIF</block>
   <block id="e6d9b928e48b5e5a2538b2bcdc515c95" category="paragraph">고객 지정 LIF에는 두 가지 유형이 할당됩니다.</block>
   <block id="7e8ceade9e54e9a912c6f9a52ea87658" category="list-text">클러스터 관리(클러스터당 1개)</block>
   <block id="5e3a8851b34912653fbf0e9bbf3fc9d0" category="list-text">노드 관리(노드당 1개)</block>
   <block id="642223473862db290604321fe2ebe763" category="paragraph-title">SVM</block>
-  <block id="3013e63917da83ac89d317625e960fa3" category="paragraph">2개의 관리 SVM이 활성 상태입니다.</block>
-  <block id="38cd25d85c8a7e96abb2aaf9d4009eb2" category="list-text">기본 SVM</block>
-  <block id="c6117cdbee2307d85ed57db8a195f4f8" category="list-text">클러스터 SVM입니다</block>
   <block id="d5350d8759b1ec84607e47908809058e" category="paragraph-title">애그리게이트</block>
   <block id="ebeedb9721ef0e0966825fecfef52bb5" category="paragraph">루트 애그리게이트가 생성됩니다.</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="paragraph-title">피처</block>
   <block id="d5daa4c0e0a3988a633eb5273b984697" category="paragraph">모든 기능은 라이센스가 부여되며 사용할 수 있습니다. SnapLock와 FabricPool 모두 별도의 라이센스가 필요합니다.</block>
-  <block id="076515078e25047da0c60bc6f27e2c68" category="admonition">생성된 데이터 SVM이 없습니다. 또한 다중 노드 클러스터에는 자동 생성된 LIF가 있는 내부 네트워크가 있습니다.</block>
   <block id="d0730ff14b2f6fb53d9e49978a76660e" category="summary">ONTAP Select은 대부분의 ONTAP 기능을 완벽하게 지원합니다. 대부분의 ONTAP 기능은 클러스터를 구축할 때 각 노드에 대해 자동으로 라이센스가 부여됩니다. 그러나 일부 기능에는 별도의 라이센스가 필요합니다.</block>
   <block id="f33b49f74fc8933d903baf71e893888b" category="doc">ONTAP 기능</block>
   <block id="0deac5caf37785bb3c3ce0d80f8d8d18" category="admonition">하드웨어별 종속 관계가 있는 ONTAP 기능은 일반적으로 ONTAP Select에서 지원되지 않습니다.</block>
@@ -3708,7 +3670,6 @@
   <block id="bd4d64691f933fac8c76e72632b62944" category="sidebar">Python 코드 샘플</block>
   <block id="d7d5441f14743f0457740d73bd580cfa" category="sidebar">JSON으로 클러스터를 생성하십시오</block>
   <block id="1ca48c398b8c739a9815d44011185388" category="sidebar">클러스터 노드 크기 조정</block>
-  <block id="46fc1cf655dd8158b6b58910cf88e653" category="sidebar">Ansible을 통한 자동화</block>
   <block id="8a9e0f8224695e94f0988f444488877b" category="sidebar">CLI를 사용합니다</block>
   <block id="89c5ba6f9355d2da97bb00bdf0ec66e5" category="sidebar">SSH를 사용하여 로그인합니다</block>
   <block id="b4196422f4798acbaffd27a9839f9143" category="sidebar">ESXi를 6.5 이상으로 업그레이드하는 중입니다</block>
@@ -3731,4 +3692,17 @@
   <block id="bcb0a8f0933f79963f8da791712307a2" category="list-text"><block ref="b36a96015925128ab0074fda8004c795" category="inline-link-rx"></block>평가판 라이센스가 있는 ONTAP Select 배포를 위해.</block>
   <block id="bf55dfa0f53f23704c47337781c41d3d" category="inline-link">등록된 NetApp 지원 사이트 계정이 있습니다</block>
   <block id="914500048ffed1428cdb2b9c357cc238" category="paragraph"><block ref="a25ad1701b82327b9cc6269d54c24597" category="inline-link-rx"></block>..</block>
+  <block id="e85029c6308bf8469ad5d2bf5ac5a6da" category="doc">ONTAP Select 로컬 연결 스토리지를 위한 하드웨어 RAID 서비스</block>
+  <block id="72270ae5ad1efa50cbda87b77a2b8c8d" category="inline-link-macro">ONTAP Select 소프트웨어 RAID 구성에서 장애가 발생한 드라이브를 교체합니다</block>
+  <block id="9e21cea65d2285f38de1d74bb5ebe82c" category="admonition">하드웨어 RAID 구성을 사용하는 ONTAP Select VM에서 가상 디스크를 분리할 수 없습니다. 디스크 분리는 소프트웨어 RAID 구성을 사용하는 ONTAP Select VM에 대해서만 지원됩니다. 자세한 내용은 을 <block ref="2a48fe6fcfd810b54ef07e2d1e2a735b" category="inline-link-macro-rx"></block> 참조하십시오.</block>
+  <block id="dba6192da7444fc9e5fd32119193b12b" category="admonition">ONTAP 관리자 계정에 대한 역할 및 권한을 제한하면 ONTAP Select 배포에서 클러스터를 관리하는 기능이 제한될 수 있습니다. 자세한 내용은 기술 자료 문서를 <block ref="e376689174188790c996782ceb328c45" category="inline-link-macro-rx"></block>참조하십시오.</block>
+  <block id="a97a40851f37ebfbf5db3d3bf28da58b" category="admonition">다중 노드 클러스터에는 자동 생성된 LIF가 포함된 내부 네트워크가 있습니다.</block>
+  <block id="0f1007666fd5cc7934baffbdef1287d0" category="paragraph">3개의 SVM이 활성화됩니다.</block>
+  <block id="070848ec049722b444235c5db132a1bb" category="list-text">관리자 SVM</block>
+  <block id="9392c5507686114a0bba1e8e0b5be096" category="list-text">노드 SVM</block>
+  <block id="d78477ac5628a6dd2fb8c046564b2227" category="list-text">시스템(클러스터) SVM</block>
+  <block id="93b1520005778e826c33efa7132d61c9" category="inline-link">SVM를 생성합니다</block>
+  <block id="e0d52f0658828de62020550252885d55" category="admonition">ONTAP Select 클러스터 구축의 일부로 데이터 SVM이 생성되지 않습니다. 배포 후에는 클러스터 관리자가 생성해야 합니다. 자세한 내용은 을<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>참조하십시오.</block>
+  <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">클러스터에 포함된 SVM 유형</block>
+  <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
 </blocks>

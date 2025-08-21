@@ -3373,19 +3373,12 @@
   <block id="c94bc3200f704807c4c41ce4c2e2b2d8" category="paragraph">ONTAP Select 클러스터에 사용되는 각 호스트에 대해 업그레이드 절차를 수행해야 합니다.</block>
   <block id="e35a91dc5473bf4a53204a2bd1366d7e" category="summary">ONTAP Select 9.15.1부터 기존 클러스터의 크기를 6개에서 8개 노드로 늘리고 클러스터 크기를 8개에서 6개 노드로 줄일 수 있습니다.</block>
   <block id="c5f80e69da9019e045ae59cca1c9ae22" category="doc">클러스터를 확장하거나 축소합니다</block>
-  <block id="d6746c8c49fd9df73bbb168197689da8" category="paragraph">ONTAP Select 9.15.1부터 기존 클러스터의 크기를 6개에서 8개 노드로 늘리고 클러스터 크기를 8개에서 6개 노드로 줄일 수 있습니다. 다른 클러스터 확장 또는 축소 시나리오는 지원되지 않습니다.</block>
-  <block id="f6ad6d358dd65a1da361069309b57e39" category="paragraph">이 절차는 CLI, API 또는 웹 인터페이스를 사용하여 ONTAP Select Deploy에서 시작합니다.</block>
   <block id="412c286ae37ff7a40b56dd84c3bf196c" category="section-title">하드웨어 및 스토리지 요구 사항</block>
   <block id="c9dd95ac8795512f2d676118ba8def1a" category="paragraph">클러스터 확장 및 수축 기능은 다음과 같은 방식으로 제한됩니다.</block>
-  <block id="03a645906298706d76817495f4d8708a" category="list-text">지원은 ESX 하이퍼바이저 호스트에서 생성된 클러스터로 제한됩니다. 다음 ESX 버전은 ONTAP Select 9.15.1과 호환됩니다.</block>
   <block id="ef179550c4eb9da6a82350b32d807ed9" category="list-text">ESXi 7.0</block>
-  <block id="2b2045e987020e440e1d72497530fdf6" category="list-text">6노드 클러스터에서 8노드 클러스터로만 확장할 수 있습니다.</block>
-  <block id="39503511d67e0af8ddd6049c24f164f7" category="list-text">수축은 8노드 클러스터에서 6노드 클러스터로만 가능합니다.</block>
   <block id="c0fa4ded01a6d24b2a77cd3a6b10e6e7" category="section-title">클러스터를 확장합니다</block>
   <block id="c117993f1e48f58c366f6fe0873d958b" category="paragraph">클러스터 확장 기능을 사용하여 6노드에서 8노드 클러스터로 기존 클러스터의 크기를 늘릴 수 있습니다.</block>
   <block id="679ac2592315c6e7c7320336fcda4a9c" category="paragraph">클러스터 확장 절차를 준비하기 위해 새 ESX 호스트가 인벤토리에 추가되고 새 노드의 세부 정보가 할당됩니다. 클러스터 확장 프로세스를 시작하기 전에 네트워크 사전 점검에서 선택한 내부 네트워크를 확인합니다.</block>
-  <block id="7c96df80e019ac7201d76d07cb2c8c3b" category="inline-link-macro">네트워크 연결 검사기</block>
-  <block id="4ae4de42a8fcf95f1eb770acae4690f2" category="list-text">다중 노드 클러스터를 구축할 때는 에 익숙해야 <block ref="db3262d1c88b720b4d17a260091e6a75" category="inline-link-macro-rx"></block>합니다.</block>
   <block id="30230ebf7e780c11cfcde8274fc17934" category="list-text">새 노드에 대한 라이센스 세부 정보가 있는지 확인합니다.</block>
   <block id="70be200347cc17e3939c72792fe71b15" category="list-text">페이지 상단의 * Cluster * 탭을 선택하고 목록에서 원하는 클러스터를 선택합니다.</block>
   <block id="83d473b2e8f1c324b60e13d720cac51a" category="list-text">클러스터 세부 정보 페이지에서 페이지 오른쪽에 있는 기어 아이콘을 선택하고 * 클러스터 확장 * 을 선택합니다.</block>
@@ -3680,7 +3673,6 @@
   <block id="afc9d68a1be701598b5ef94dc0be2844" category="sidebar">2노드 클러스터에 대한 구축 복구</block>
   <block id="b374e4bbc5d3bd65f35605cc784ed685" category="list-text">ONTAP Select 9.14.1에는 VMware ESXi 8.0 U2에 대한 지원이 포함되어 있습니다.</block>
   <block id="5add73dc063e8420f47ce30e8a544f34" category="list-text">VMware ESXi 8.0 U3(ONTAP 9.15.1P4 이상 사용 가능한 패치 릴리즈에 사용 가능)</block>
-  <block id="03c073298ba0e42c4beebe1f4a065d90" category="list-text">ESXi 8.0 U3(ONTAP 9.15.1P4 이상 사용 가능한 패치 릴리즈에 사용 가능)</block>
   <block id="3a13e6fcb6840db51e3e181c41dff37b" category="list-text">ESXi 8.0 U2</block>
   <block id="084ef93eebe5fd52d657e556b4305619" category="list-text">ESXi 8.0 U1</block>
   <block id="4ec8056f2f2bfb0ffa0104fc43edb1da" category="list-text">ESXi 8.0GA</block>
@@ -3705,4 +3697,17 @@
   <block id="e0d52f0658828de62020550252885d55" category="admonition">ONTAP Select 클러스터 구축의 일부로 데이터 SVM이 생성되지 않습니다. 배포 후에는 클러스터 관리자가 생성해야 합니다. 자세한 내용은 을<block ref="35df8afad8b7a7c75a74b08ae370be2a" category="inline-link-rx"></block>참조하십시오.</block>
   <block id="c472d49cae1aabcbf09d7e5fe0e34c87" category="inline-link-macro">클러스터에 포함된 SVM 유형</block>
   <block id="2e6bba9624b33764642b52b2cab65274" category="list-text"><block ref="2e6bba9624b33764642b52b2cab65274" category="inline-link-macro-rx"></block></block>
+  <block id="82f452184fa717ab2fcdbde25eea3a2b" category="inline-link-macro">프로덕션 배포를 위한 라이선스에 대해 알아보세요</block>
+  <block id="74d4caeb059278dbd1c813ff422126a8" category="list-text"><block ref="74d4caeb059278dbd1c813ff422126a8" category="inline-link-macro-rx"></block></block>
+  <block id="3e7c1c2f4ff8e34c82dbce131bf96f39" category="paragraph">다음 클러스터 확장 및 축소는 지원되지 않습니다.</block>
+  <block id="399ac94f70d77c6189cd7c4808326bdd" category="list-text">1, 2 또는 4노드 클러스터에서 6 또는 8노드 클러스터로 확장합니다.</block>
+  <block id="226d8636aca6bd1bdcac58203b8ddcd2" category="list-text">6개 또는 8개 노드 클러스터에서 1개, 2개 또는 4개 노드 클러스터로의 수축.</block>
+  <block id="91af5705f16502125e8b2187e64202c0" category="inline-link-macro">CLI</block>
+  <block id="deb20e04b6a7cd797c67d023a7919cc9" category="inline-link-macro">웹 UI</block>
+  <block id="a1f41e52e9ddbd9f87ecd032c237b1c0" category="inline-link-macro">SnapMirror 복제</block>
+  <block id="479ae5866a20368120075c3c81487a72" category="paragraph">클러스터 확장이나 축소에서 지원하지 않는 크기로 클러스터의 노드 수를 변경하려면 다음 작업을 수행해야 합니다. 다음을 사용하여 새 다중 노드 클러스터를 배포합니다. <block ref="e244d19d71425b6ce1016edcf4f160e2" category="inline-link-macro-rx"></block> 또는 <block ref="e7b95b44ed2cf30f5122b04d3c4d28be" category="inline-link-macro-rx"></block> ONTAP Select Deploy 관리 유틸리티와 함께 제공됩니다. . 해당되는 경우 다음을 사용하여 데이터를 새 클러스터로 마이그레이션합니다. <block ref="968561cde231c01bbf82ff0390d26f84" category="inline-link-macro-rx"></block> .</block>
+  <block id="c630ce0380a19f100f797f38c49d39bd" category="paragraph">CLI, API 또는 웹 인터페이스를 사용하여 ONTAP Select Deploy에서 클러스터 확장 및 축소 절차를 시작합니다.</block>
+  <block id="e6bf3ba5fe1006a55faeef44787ee469" category="list-text">지원은 ESX 하이퍼바이저 호스트에서 생성된 클러스터로 제한됩니다. 다음 ESX 버전은 ONTAP Select 9.15.1 이상과 호환됩니다.</block>
+  <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
+  <block id="6f32bc87686311f97a78df38edf22268" category="list-text">다중 노드 클러스터를 배포할 때는 네트워크 연결 검사기를 잘 알고 있어야 합니다. <block ref="8b785c8234405c591fd2ca6b43d87925" category="inline-link-macro-rx"></block> 또는 <block ref="d445e69ec86af9bb8b6f10e8a87603f1" category="inline-link-macro-rx"></block> .</block>
 </blocks>

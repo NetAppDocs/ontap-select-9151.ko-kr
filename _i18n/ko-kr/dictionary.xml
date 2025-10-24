@@ -1911,7 +1911,6 @@
   <block id="b622687ba14734f3e63b4781b7e16324" category="paragraph-title">4노드, 6노드 또는 8노드 클러스터와 2노드 ONTAP Select 클러스터의 차이점은 무엇입니까?</block>
   <block id="81cd6c8ef1512058861a9e8233376fb2" category="paragraph">ONTAP Select 배포 VM이 주로 클러스터를 생성하는 데 사용되는 4노드, 6노드 및 8노드 클러스터와 달리 2노드 클러스터는 ONTAP Select 배포 VM에 지속적으로 의존하여 HA 쿼럼을 수행합니다. ONTAP Select 배포 VM을 사용할 수 없는 경우 장애 조치 서비스가 비활성화됩니다.</block>
   <block id="22d02cab0c9108f9f86736e68a4be2de" category="paragraph-title">MetroCluster SDS란?</block>
-  <block id="a6bd8e6869506e1e1f9d1c161d200e90" category="paragraph">MetroCluster SDS는 NetApp의 MetroCluster 비즈니스 연속성 솔루션 범주에 해당하는 저렴한 동기식 복제 옵션입니다. 이 기능은 FAS 하이브리드 플래시, AFF, 클라우드용 NetApp 프라이빗 스토리지 및 NetApp FlexArray ® 기술에서 제공되는 NetApp MetroCluster와 달리 ONTAP Select에서만 사용할 수 있습니다.</block>
   <block id="5c13f1d93ecc5cc8fc37b87a8fedb3b7" category="paragraph-title">MetroCluster SDS는 NetApp MetroCluster와 어떻게 다릅니까?</block>
   <block id="f782a001664af23a9a479ac7f8af14db" category="paragraph">MetroCluster SDS는 동기식 복제 솔루션을 제공하고 NetApp MetroCluster 솔루션에 속합니다. 그러나 주요 차이점은 지원되는 거리(~10km vs 300km)와 연결 유형(FC 및 IP 대신 IP 네트워크만 지원됨)입니다.</block>
   <block id="1092371194caad84c750464b682a97f5" category="paragraph-title">2노드 ONTAP Select 클러스터와 2노드 ONTAP MetroCluster SDS의 차이점은 무엇입니까?</block>
@@ -3710,4 +3709,5 @@
   <block id="e6bf3ba5fe1006a55faeef44787ee469" category="list-text">지원은 ESX 하이퍼바이저 호스트에서 생성된 클러스터로 제한됩니다. 다음 ESX 버전은 ONTAP Select 9.15.1 이상과 호환됩니다.</block>
   <block id="37730150d6378b2a0b04f20595d2d65a" category="list-text">ESXi 8.0 U3</block>
   <block id="6f32bc87686311f97a78df38edf22268" category="list-text">다중 노드 클러스터를 배포할 때는 네트워크 연결 검사기를 잘 알고 있어야 합니다. <block ref="8b785c8234405c591fd2ca6b43d87925" category="inline-link-macro-rx"></block> 또는 <block ref="d445e69ec86af9bb8b6f10e8a87603f1" category="inline-link-macro-rx"></block> .</block>
+  <block id="d099d0357fc4b6bd5f674bf948ccd8ef" category="paragraph">MetroCluster SDS는 NetApp 의 MetroCluster 비즈니스 연속성 솔루션 범주에 속하는 저비용 동기식 복제 옵션입니다. FAS 하이브리드 플래시, AFF 및 NetApp 프라이빗 스토리지(클라우드용)에서 사용할 수 있는 NetApp MetroCluster 와 달리, ONTAP Select 에서만 사용할 수 있습니다.</block>
 </blocks>

@@ -97,6 +97,7 @@ ONTAP Select에서는 여러 ONTAP 기능이 지원되지 않습니다. 대부�
 * 서비스 프로세서
 * SVM 마이그레이션
 * SnapLock 규정 준수
+* SnapMirror 액티브 싱크
 * VMware HCX를 참조하십시오
 
 
